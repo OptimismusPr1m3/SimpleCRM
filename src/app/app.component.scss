@@ -9,5 +9,41 @@
 
 .sidenav {
     width: 300px;
-    padding: 16px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    padding: 0px 16px;
+    border-bottom: 2px solid rgba($color: #918989, $alpha: 0.3);
+}
+
+mat-toolbar {
+    height: 56px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    > li {
+        padding-left: 16px;
+        padding-right: 16px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        > mat-icon {
+            margin-right: 16px;
+        }
+        &:hover {
+            background-color: rgba($color: #868181, $alpha: 0.3);
+        }
+    }
+}
+
+.router-container {
+    margin-top: 40px;
+    margin-left: 40px;
 }

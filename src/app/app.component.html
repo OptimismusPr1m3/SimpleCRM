@@ -1,6 +1,10 @@
-<mat-drawer-container  class="mat-drawer-container" autosize>
+<mat-drawer-container class="mat-drawer-container" autosize>
   <mat-drawer [opened]="true" #drawer class="sidenav" mode="side">
-    <p>enter logo here</p>
+    <div class="logo-container">enter logo here</div>
+    <ul>
+      <li [routerLink]="['/']" routerLinkActive="router-link-active"  ><mat-icon>dashboard</mat-icon>Dashboard</li>
+      <li [routerLink]="['/user']" routerLinkActive="router-link-active" ><mat-icon>person</mat-icon> User</li>
+    </ul>
   </mat-drawer>
   <div class="example-sidenav-content">
     <mat-toolbar>
@@ -8,7 +12,10 @@
       <span>Simple-CRM</span>
       <span class="example-spacer"></span>
     </mat-toolbar>
+    <div class="router-container">
+      <router-outlet />
+    </div>
   </div>
+  
 </mat-drawer-container>
 
-<router-outlet />
