@@ -31,7 +31,7 @@ import {
   setDoc,
   updateDoc,
 } from '@angular/fire/firestore';
-import { initializeApp } from 'firebase/app';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-dialog-add-user',
@@ -46,6 +46,7 @@ import { initializeApp } from 'firebase/app';
     MatButtonModule,
     MatInputModule,
     MatDatepickerModule,
+    MatProgressSpinnerModule
   ],
   templateUrl: './dialog-add-user.component.html',
   styleUrl: './dialog-add-user.component.scss',
@@ -54,9 +55,13 @@ export class DialogAddUserComponent {
   user: User = new User();
   birthDate: Date | undefined;
   firestore: Firestore = inject(Firestore);
+  newUserisSaved: boolean = false;
+
+  constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>) {}
 
   onNoClick() {}
   async saveUser() {
+    this.newUserisSaved = true;
     this.user.birthDate = this.birthDate?.getTime();
     console.log('Current User is:', this.user);
     this.addNewUser();
@@ -73,6 +78,8 @@ export class DialogAddUserComponent {
         updateDoc(userRef, {
           userID: docRef?.id,
         });
+        this.newUserisSaved = false;
+        this.dialogRef.close();
       });
   }
 
