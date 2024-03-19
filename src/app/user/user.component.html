@@ -1,4 +1,23 @@
-<p>user works!</p>
-<button (click)="openDialog()" matTooltipPosition="left" matTooltip="Add a new user" class="add-user-btn" mat-fab color="primary" aria-label="Add user">
+<mat-card>
+  <table class="user-table">
+    <tr>
+      <th>Name</th>
+      <th>E-mail</th>
+      <th>City</th>
+    </tr>
+    <tr>
+      <td>Sebastian</td>
+      <td>emailemail.de</td>
+      <td>Stadt</td>
+    </tr>
+    <tr>
+      <td>Sebastian</td>
+      <td>emailemail.de</td>
+      <td>Stadt</td>
+    </tr>
+  </table>
+</mat-card>
+<button (click)="openDialog()" matTooltipPosition="left" matTooltip="Add a new user" class="add-user-btn" mat-fab
+  color="primary" aria-label="Add user">
   <mat-icon>add</mat-icon>
 </button>

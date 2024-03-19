@@ -59,7 +59,9 @@ export class DialogAddUserComponent {
 
   constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>) {}
 
-  onNoClick() {}
+  onNoClick() {
+    this.dialogRef.close();
+  }
   async saveUser() {
     this.newUserisSaved = true;
     this.user.birthDate = this.birthDate?.getTime();
