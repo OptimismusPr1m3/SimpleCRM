@@ -64,6 +64,7 @@ export class DialogAddUserComponent {
   }
   async saveUser() {
     this.newUserisSaved = true;
+    console.log('BirthDate is: ', this.user.birthDate)
     this.user.birthDate = this.birthDate?.getTime();
     console.log('Current User is:', this.user);
     this.addNewUser();
