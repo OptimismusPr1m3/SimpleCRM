@@ -5,6 +5,7 @@ export class User {
     street: string | undefined;
     zipCode: number | undefined;
     city: string | undefined;
+    email: string | undefined;
 
     constructor(obj?: any) { // mit dem ? kann man sagen , dass da nicht unbedingt was reingegeben werden muss
         this.firstName = obj ? obj.firstName : ''; // auch if else abfrage !
@@ -12,7 +13,8 @@ export class User {
         this.birthDate = obj ? obj.birthDate : ''; 
         this.street = obj ? obj.street : ''; 
         this.zipCode = obj ? obj.zipCode : ''; 
-        this.city = obj ? obj.city : ''; 
+        this.city = obj ? obj.city : '';
+        this.email = obj ? obj.email : '';
     }
 
     public toJSON() {
@@ -22,7 +24,8 @@ export class User {
             birthDate: this.birthDate,
             street: this.street,
             zipCode: this.zipCode,
-            city: this.city
+            city: this.city,
+            email: this.email
         }
     }
 

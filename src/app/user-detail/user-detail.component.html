@@ -1,0 +1,24 @@
+<mat-card class="user-detail-header">
+  <img src="./assets/images/testPic.png" />
+  <div class="user-details">
+    <h2>{{ userData.firstName }} {{ userData.lastName }}</h2>
+    {{ userData.email }}
+  </div>
+</mat-card>
+
+<mat-card class="mt-32">
+  <button
+    mat-icon-button class="pin-right-upper-corner"
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-card-header>
+    <mat-card-title>Address</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{ userData.street }} <br />
+      {{ userData.zipCode }}
+    </p>
+  </mat-card-content>
+</mat-card>

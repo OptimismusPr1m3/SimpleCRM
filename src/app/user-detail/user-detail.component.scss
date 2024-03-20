@@ -1,0 +1,33 @@
+@import './../../styles.scss';
+
+.user-detail-header {
+    min-height: 250px;
+    background-color: #E11D5F;
+    @include flexcont (flex-start, flex-end, row);
+    padding: 24px;
+    > img {
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        object-fit: cover;
+        object-position: 85% 15%;
+    }
+    > .user-details {
+        @include flexcont (center, flex-start, column);
+        margin-left: 32px;
+        height: 100px;
+        > h2 {
+            margin-bottom: 0;
+        }
+    }
+}
+
+mat-card {
+    position: relative;
+}
+
+.pin-right-upper-corner {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
